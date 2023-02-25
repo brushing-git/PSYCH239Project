@@ -1,5 +1,8 @@
 # Representational Similarity Analysis Project
 
+![My Image](simple_net_relu_fine_grain_correlation.png)
+![My Image](simple_net_relu_fine_grain_euclid.png)
+
 ## Overview
 
 This project demonstrates the application of statistical techniques and machine learning methods to address a fundamental question in interpretability research and cognitive neuroscience:  how "alike" are the representations used in different cognitive architectures?  Representational Similarity Analysis (RSA) aims to answer this question.
