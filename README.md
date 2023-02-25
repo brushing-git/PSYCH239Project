@@ -1,6 +1,6 @@
 # Representational Similarity Analysis Project
 
-Pearson Correlation                                     | Euclidean Distance
+Pearson Correlation on RELU                             | Euclidean Distance on RELU
 :------------------------------------------------------:|:-------------------------------------------------:
 ![My Image](simple_net_relu_fine_grain_correlation.png) | ![My Image](simple_net_relu_fine_grain_euclid.png)
 
@@ -20,7 +20,13 @@ Data sets were saved in pickle files and manipulated using Python's dictionary f
 
 ## Statistical Methods
 
+RSA works by comparing how neurons (in both models and the brain) respond to samples from a variety of categories.  For example, in object recognition, the activation patterns of images of monkeys, lemurs, snakes, and cars can be compared to assess how a similar a model's activation patterns are among images of the same and different categories.  If two models rank monkeys as similar to lemurs but different from snakes and more different from cars, then we might say the models are representing monkeys, lemurs, snakes, and cars in a likewise manner.
+
+Similarity is measured by either correlation or distance.  I employed two techniques to assess correlation:  Pearson product-moment and Spearman rank correlation.  If a representation is seen as a vector from the origin, correlation can be thought of as measuring the relative angle between representations.  Distance, however, measures the difference in magnitude between representations.  I used Euclidean and Absolute distance.  Euclidean distance captures how similar representations are with both distance and magnitude; absolute distance captures only the magnitude.
+
 ## Machine Learning Methods
+
+
 
 ## Experiments
 
