@@ -64,4 +64,4 @@ The important takeaway is that **interpretability results may not track the feat
 
 ## Further Reading
 
-For further analysis please [read the full report write-up]().
+For further analysis please [read the full report write-up](Rushing_RSA_draft1.pdf).
