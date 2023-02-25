@@ -20,13 +20,17 @@ Data sets were saved in pickle files and manipulated using Python's dictionary f
 
 ## Statistical Methods
 
-RSA works by comparing how neurons (in both models and the brain) respond to samples from a variety of categories.  For example, in object recognition, the activation patterns of images of monkeys, lemurs, snakes, and cars can be compared to assess how a similar a model's activation patterns are among images of the same and different categories.  If two models rank monkeys as similar to lemurs but different from snakes and more different from cars, then we might say the models are representing monkeys, lemurs, snakes, and cars in a likewise manner.
+RSA works by comparing how neurons (in both models and the brain) respond to samples from a variety of categories.  For example, in object recognition, the activation patterns of images of monkeys, lemurs, snakes, and cars can be compared to assess how a similar a model's activation patterns are among images of the same and different categories.  If two models rank monkeys as similar to lemurs but different from snakes and more different from cars, then we might say the models are representing monkeys, lemurs, snakes, and cars in a likewise manner.  A RDM can then be constructed by 
 
 Similarity is measured by either correlation or distance.  I employed two techniques to assess correlation:  Pearson product-moment and Spearman rank correlation.  If a representation is seen as a vector from the origin, correlation can be thought of as measuring the relative angle between representations.  Distance, however, measures the difference in magnitude between representations.  I used Euclidean and Absolute distance.  Euclidean distance captures how similar representations are with both distance and magnitude; absolute distance captures only the magnitude.
 
+I used `numpy` and `scipy.stats` to compute the correlations and distances between representations of my models.  All operations to construct RDMs were done using `numpy` and `matplotlib`.
+
 ## Machine Learning Methods
 
+A variety of neural network models were used to learn representations.  Each architecture was custom designed in `pytorch` to test hypotheses about the relevance of similarity metrics for RSA.  Two broad categories of models were used.  The first are simple feedforward neural networks with only 1 hidden layer.  The second were feedforward neural networks with multiple hidden layers and parameter counts.  The smallest model had 32,960 parameters and the largest model had 172,800 parameters.  Models also varied in their activation functions.  Sigmoid, RELU, and smoothstep were all utilized as given `pytorch`.
 
+Models were trained on data sets and then validated on a hold-out test set.  Training was done on Google Colab, and `pytorch` was used to train the models.  For conducting RSA experiments, trained models had their parameters copied minus the final layer used for making predictions.
 
 ## Experiments
 
