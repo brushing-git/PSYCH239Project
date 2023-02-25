@@ -2,7 +2,7 @@
 
 Pearson Correlation on RELU                             | Euclidean Distance on RELU
 :------------------------------------------------------:|:-------------------------------------------------:
-![My Image](Images\simple_net_relu_fine_grain_correlation.png) | ![My Image](Images\simple_net_relu_fine_grain_euclid.png)
+![My Image](Images/simple_net_relu_fine_grain_correlation.png) | ![My Image](Images/simple_net_relu_fine_grain_euclid.png)
 
 ## Overview
 
