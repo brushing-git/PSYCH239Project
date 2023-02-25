@@ -45,9 +45,19 @@ The results of experiments showed mismatches between RDMs constructed with corre
 Pearson Correlation | ![My Image](Images/simple_net_relu_coarse_grain_correlation.png) | ![My Image](Images/simple_net_sigmoid_coarse_grain_correlation.png)
 Euclidean Distance  | ![My Image](Images/simple_net_relu_coarse_grain_euclid.png)      | ![My Image](Images/simple_net_sigmoid_coarse_grain_euclid.png)
 
-These findings were more pronounced when viewing the RDMs for fine grained classification of generating distributions.  See the start of the articleThis could be partially fixed by renormalizing, but the problem still appears for the RDMs for fine grained classification task.  This can be seen below when normalization is applied to the Euclidean distance metric.  Going from top to bottom and left to right, the distributions are Gaussian on 4 different parameters, Beta on 4 different parameters, and Gamma on 4 different parameters.  Again, lighter means the representations are more dissimilar:
+These findings were more pronounced when viewing the RDMs for fine grained classification of generating distributions.  
+
+Due to the effect being found in RELU networks and not Sigmoid networks, I hypothesized the problem could be fixed by renormalizing the inputs of the network before constructing the RDM.  Subsequent experiments showed this partially worked, but the problem still appears for the RDMs for fine grained classification task.  This can be seen below when normalization is applied to the Euclidean distance metric.  Going from top to bottom and left to right, the distributions are Gaussian on 4 different parameters, Beta on 4 different parameters, and Gamma on 4 different parameters.  Again, lighter means the representations are more dissimilar:
 
  Similarity Metric  | Fine Grained RELU                                                | Fine Grained Renormalized RELU
 :------------------:|:----------------------------------------------------------------:|:------------------------------------------:
-Pearson Correlation | ![My Image](Images/simple_net_relu_fine_grain_correlation.png) | ![My Image](Images/simple_net_sigmoid_coarse_grain_correlation.png)
-Euclidean Distance  | ![My Image](Images/simple_net_relu_fine_grain_euclid.png)      | ![My Image](Images/simple_net_sigmoid_coarse_grain_euclid.png)
+Pearson Correlation | ![My Image](Images/simple_net_relu_fine_grain_correlation.png) | ![My Image](Images/simple_net_relu_fine_grain_correlation_renorm.png)
+Euclidean Distance  | ![My Image](Images/simple_net_relu_fine_grain_euclid.png)      | ![My Image](Images/simple_net_relu_fine_grain_euclid_renorm.png)
+
+Note that even after renormalization, the images in the right column still differ in how they order representations based on the coloring.
+
+Full results are discussed in the companion paper, which was written in Latex.
+
+## Discussion
+
+The important takeaway is that **interpretability results may not track the features of our models because our statistical methods pick up other architectural features**.  In this case, the similarity metric used in RSA actually seems to pick up on the nonlinear activation function of our models.  This may affect the conclusion our analysis would give:  we might errantly conclude that representations between models or brains are similar or dissimilar when our results happen to fixate on an interaction between our statistical tools and the activation functions used in the model.
