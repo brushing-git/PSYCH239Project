@@ -1,6 +1,8 @@
 # Representational Similarity Analysis Project
 
-![My Image](simple_net_relu_fine_grain_correlation.png) ![My Image](simple_net_relu_fine_grain_euclid.png)
+Pearson Correlation                                     | Euclidean Distance
+:------------------------------------------------------:|:-------------------------------------------------:
+![My Image](simple_net_relu_fine_grain_correlation.png) | ![My Image](simple_net_relu_fine_grain_euclid.png)
 
 ## Overview
 
