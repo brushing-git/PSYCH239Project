@@ -38,7 +38,11 @@ Experiments were run on 12 different models.  After training and validation, rep
 
 ## Results
 
-The results of experiments showed mismatches between RDMs constructed with correlation and distance metrics on neural networks with RELU activation functions.  For example at the coarse-grained level where RDMs are measuring similarity of the functional form of distributions (Gaussian compared to Beta compared to Gamma), the ordering of RDMs is reversed for RELU networks but not for Sigmoid networks:
+The results of experiments showed mismatches between RDMs constructed with correlation and distance metrics on neural networks with RELU activation functions.  For example at the coarse-grained level where RDMs are measuring similarity of the functional form of distributions (Gaussian compared to Beta compared to Gamma), the ordering of RDMs is reversed for RELU networks but not for Sigmoid networks.  Lighter colors means the representation is more dissimilar:
 
-                    | RELU Network                  | Sigmoid Network
-Pearson Correlation | 
+                    | RELU Network                                                     | Sigmoid Network
+:-------------------:------------------------------------------------------------------:--------------------------------------------
+Pearson Correlation | ![My Image](Images/simple_net_relu_coarse_grain_correlation.png) | ![My Image](Images/simple_net_sigmoid_coarse_grain_correlation.png)
+Euclidean Distance  | ![My Image](Images/simple_net_relu_coarse_grain_euclid.png)      | ![My Image](Images/simple_net_sigmoid_coarse_grain_euclid.png)
+
+This could be partially fixed by renormalizing.
