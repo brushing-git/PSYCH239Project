@@ -61,3 +61,7 @@ Full results are discussed in the companion paper, which was written in Latex.
 ## Discussion
 
 The important takeaway is that **interpretability results may not track the features of our models because our statistical methods pick up other architectural features**.  In this case, the similarity metric used in RSA actually seems to pick up on the nonlinear activation function of our models.  This may affect the conclusion our analysis would give:  we might errantly conclude that representations between models or brains are similar or dissimilar when our results happen to fixate on an interaction between our statistical tools and the activation functions used in the model.
+
+## Further Reading
+
+For further analysis please [read the full report write-up]().
