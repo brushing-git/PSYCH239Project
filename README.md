@@ -1,6 +1,6 @@
 # Representational Similarity Analysis Project
 
-![My Image](simple_net_relu_fine_grain_correlation.png = 100x100) ![My Image](simple_net_relu_fine_grain_euclid.png = 100x100)
+![My Image](simple_net_relu_fine_grain_correlation.png) ![My Image](simple_net_relu_fine_grain_euclid.png)
 
 ## Overview
 
