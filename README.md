@@ -38,11 +38,16 @@ Experiments were run on 12 different models.  After training and validation, rep
 
 ## Results
 
-The results of experiments showed mismatches between RDMs constructed with correlation and distance metrics on neural networks with RELU activation functions.  For example at the coarse-grained level where RDMs are measuring similarity of the functional form of distributions (Gaussian compared to Beta compared to Gamma), the ordering of RDMs is reversed for RELU networks but not for Sigmoid networks.  Lighter colors means the representation is more dissimilar:
+The results of experiments showed mismatches between RDMs constructed with correlation and distance metrics on neural networks with RELU activation functions.  For example at the coarse-grained level where RDMs are measuring similarity of the functional form of distributions (Gaussian compared to Beta compared to Gamma), the ordering of RDMs is reversed for RELU networks but not for Sigmoid networks.  The order going from top to bottom and left to right of the distributions are Gaussian, Beta, and Gamma.  Lighter colors means the representation is more dissimilar:
 
  Similarity Metric  | RELU Network                                                     | Sigmoid Network
 :------------------:|:----------------------------------------------------------------:|:------------------------------------------:
 Pearson Correlation | ![My Image](Images/simple_net_relu_coarse_grain_correlation.png) | ![My Image](Images/simple_net_sigmoid_coarse_grain_correlation.png)
 Euclidean Distance  | ![My Image](Images/simple_net_relu_coarse_grain_euclid.png)      | ![My Image](Images/simple_net_sigmoid_coarse_grain_euclid.png)
 
-This could be partially fixed by renormalizing.
+These findings were more pronounced when viewing the RDMs for fine grained classification of generating distributions.  See the start of the articleThis could be partially fixed by renormalizing, but the problem still appears for the RDMs for fine grained classification task.  This can be seen below when normalization is applied to the Euclidean distance metric.  Going from top to bottom and left to right, the distributions are Gaussian on 4 different parameters, Beta on 4 different parameters, and Gamma on 4 different parameters.  Again, lighter means the representations are more dissimilar:
+
+ Similarity Metric  | Fine Grained RELU                                                | Fine Grained Renormalized RELU
+:------------------:|:----------------------------------------------------------------:|:------------------------------------------:
+Pearson Correlation | ![My Image](Images/simple_net_relu_fine_grain_correlation.png) | ![My Image](Images/simple_net_sigmoid_coarse_grain_correlation.png)
+Euclidean Distance  | ![My Image](Images/simple_net_relu_fine_grain_euclid.png)      | ![My Image](Images/simple_net_sigmoid_coarse_grain_euclid.png)
