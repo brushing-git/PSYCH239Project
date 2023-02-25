@@ -8,13 +8,15 @@ Pearson Correlation                                     | Euclidean Distance
 
 This project demonstrates the application of statistical techniques and machine learning methods to address a fundamental question in interpretability research and cognitive neuroscience:  how "alike" are the representations used in different machine learning models and brains?  Representational Similarity Analysis (RSA) aims to answer this question.
 
-The fundamental finding is that artifacts of statistical modeling can change the headline conclusion used in RSA.  Consequently, careful selection of statistical techniques needs to be employed when using RSA to do interpretability work in machine learning or cognitive neuroscience.
+The fundamental finding is that artifacts of statistical modeling can change the headline conclusion used in RSA because they can inadvertently pick up on architectural features of the model.  Consequently, careful selection of statistical techniques needs to be employed when using RSA to do interpretability work in machine learning or cognitive neuroscience.
 
 To reach the conclusion, I constructed a series of data sets, and I trained different neural network classifiers on those data sets.  Representations in the penultimate layer of each network were then compared using different versions of RSA.  Those versions relied upon similarity metrics that include Pearson Correlation, Spearman Correlation, Euclidean distance, and Absolute distance.  Representational Dissimilarity Matrices (RDM) were then constructed using the statistical data to study how the neural networks' representations compared.
 
 ## Data Sets
 
-Each data set consisted of samples of floating point numbers drawn from either Gaussian, Beta, or Gamma distributions.  Data sets were constructed as either "coarse" grained or "fine" grained.  A fine grained data set is a collection of samples from a specific probability distribution with specific parameters, while a coarse grained data set is the average A sample contains 512 floats; a data set contains 120,000 samples for 
+Each data set consisted of samples of 512 floating point numbers drawn from either Gaussian, Beta, or Gamma distributions.  Data sets were constructed as either "coarse" grained or "fine" grained.  A fine grained data set is a collection of samples from a specific probability distribution with specific parameters, while a coarse grained data set is the union of each fine grained set for a specific functional form.  Four sets of parameters for each distribution were used to generate fine grained data sets.  A fine grained data set produced by a specific distribution on specific parameters has 10,000 samples; a coarse grained data set produced by a specific distribution has 40,000 samples; and the total size of all data sets networks were trained on is 120,000 samples.
+
+Data sets were saved in pickle files and manipulated using Python's dictionary functionality along with Pytorch's data set class.
 
 ## Statistical Methods
 
