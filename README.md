@@ -16,7 +16,7 @@ To reach the conclusion, I constructed a series of data sets, and I trained diff
 
 Each data set consisted of samples of 512 floating point numbers drawn from either Gaussian, Beta, or Gamma distributions.  Data sets were constructed as either "coarse" grained or "fine" grained.  A fine grained data set is a collection of samples from a specific probability distribution with specific parameters, while a coarse grained data set is the union of each fine grained set for a specific functional form.  Four sets of parameters for each distribution were used to generate fine grained data sets.  A fine grained data set produced by a specific distribution on specific parameters has 10,000 samples; a coarse grained data set produced by a specific distribution has 40,000 samples; and the total size of all data sets networks were trained on is 120,000 samples.
 
-Data sets were saved in pickle files and manipulated using Python's dictionary functionality along with Pytorch's data set class.
+Data sets were saved in pickle files and manipulated using Python's dictionary functionality along with Pytorch's data set class.  The code for generating the data set is found in [rsa_datagenerator.py](rsa_datagenerator.py).
 
 ## Statistical Methods
 
@@ -35,6 +35,8 @@ Models were trained on data sets and then validated on a hold-out test set.  Tra
 ## Experiments
 
 Experiments were run on 12 different models.  After training and validation, representations for each model's penultimate layer were compared using 4 different similarity metrics.  RDMs were constructed and displayed by `matplotlib`, and they can be found below.
+
+The code for building the models and for running the experiments can be found in [rsa_modeltrainer.py](rsa_modeltrainer.py).  Note that to run the code, you will first need to run and save a data set from [rsa_datagenerator.py](rsa_datagenerator.py) in the same directory.
 
 ## Results
 
