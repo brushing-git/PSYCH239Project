@@ -6,11 +6,13 @@ Pearson Correlation on RELU                             | Euclidean Distance on 
 
 ## Overview
 
-This project demonstrates the application of statistical techniques and machine learning methods to address a fundamental question in interpretability research and cognitive neuroscience:  how "alike" are the representations used in different machine learning models and brains?  Representational Similarity Analysis (RSA) aims to answer this question.
+This project demonstrates the application of statistical techniques and machine learning methods to address an important question in interpretability research and cognitive neuroscience:  how "alike" are the representations used in different machine learning models and brains?  Representational Similarity Analysis (RSA) aims to answer this question.
 
 The fundamental finding is that artifacts of statistical modeling can change the headline conclusion used in RSA because they can inadvertently pick up on architectural features of the model.  Consequently, careful selection of statistical techniques needs to be employed when using RSA to do interpretability work in machine learning or cognitive neuroscience.
 
 To reach the conclusion, I constructed a series of data sets, and I trained different neural network classifiers on those data sets.  Representations in the penultimate layer of each network were then compared using different versions of RSA.  Those versions relied upon similarity metrics that include Pearson Correlation, Spearman Correlation, Euclidean distance, and Absolute distance.  Representational Dissimilarity Matrices (RDM) were then constructed using the statistical data to study how the neural networks' representations compared.
+
+**The key takeaway from this project is that I demonstrate an important limitations and factors to consider in interpretability methods for machine learning.**  This is directly relevant to machine learning research projects that a company or organization might hope to meet interpretability standards.
 
 ## Data Sets
 
