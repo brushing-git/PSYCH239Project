@@ -12,7 +12,7 @@ The fundamental finding is that artifacts of statistical modeling can change the
 
 To reach the conclusion, I constructed a series of data sets, and I trained different neural network classifiers on those data sets.  Representations in the penultimate layer of each network were then compared using different versions of RSA.  Those versions relied upon similarity metrics that include Pearson Correlation, Spearman Correlation, Euclidean distance, and Absolute distance.  Representational Dissimilarity Matrices (RDM) were then constructed using the statistical data to study how the neural networks' representations compared.
 
-**The key takeaway from this project is that I demonstrate an important limitations and factors to consider in interpretability methods for machine learning.**  This is directly relevant to machine learning research projects that a company or organization might hope to meet interpretability standards.
+**The key takeaway from this project is that I demonstrate important limitations and factors to consider in interpretability methods for machine learning.**  This is directly relevant to machine learning research projects that a company or organization might hope to meet interpretability standards.
 
 ## Data Sets
 
